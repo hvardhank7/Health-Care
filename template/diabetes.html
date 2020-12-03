@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Health_Care</title>
+</head>
+
+
+<body style="margin: 0;padding: 0;">
+    <div class="container-fluid" style="margin: 0;padding: 0;">
+        <nav class="navbar navbar-light bg-dark">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="home.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Tests</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row">
+            <div class="col-6 py-0 px-0">
+                <div class="jumbotron " style="height: 870px;">
+                    <h1 class="display-4 text-center">Heart Disease</h1>
+                    <br><br>
+                    <p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems and heart defects you're born with among others.
+                        The term "heart disease" is often used interchangeably with the term "cardiovascular disease."</p>
+                    <hr>
+                    <h2 class="display-5 text-center">Symptoms</h2>
+                    <ul>
+                        <li>Chest pain, chest tightness, chest pressure and chest discomfort (angina)
+                        </li>
+                        <li>Shortness of breath
+                        </li>
+                        <li>Pain in the neck, jaw, throat, upper abdomen or back
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 py-4 px-0">
+                <h1 class="text-center">
+                    Details
+                </h1>
+
+                <form action="/result" method="POST" class="py-1 form-inline">
+
+                    <div class="container" style="padding-bottom: 50px;">
+                        <div class="form-group py-2 ml-5">
+                            <label for="exang ">exang: </label>
+                            <input type="text" id="exang" name="exang" class="form-control" style="margin-left: 40px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+                            <label for="oldpeak">oldpeak: </label>
+                            <input type="text" id="oldpeak" name="oldpeak" class="form-control " style="margin-left: 27px;">
+                        </div>
+
+                        <div class="form-group py-2 ml-5">
+                            <label for="cp">cp: </label>
+                            <input type="text" id="cp" name="cp" class="form-control" style="margin-left: 65px;">
+                        </div>
+
+                        <div class="form-group py-2 ml-5">
+                            <label for="thalach">thalach: </label>
+                            <input type="text" class="form-control" id="thalach" name="thalach" style="margin-left: 30px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="ca">ca: </label>
+                            <input type="text" class="form-control" id="ca" name="ca" style="margin-left: 65px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="thal">thal: </label>
+                            <input type="text" class="form-control" id="thal" name="thal" style="margin-left: 55px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="chol">chol: </label>
+                            <input type="text" class="form-control" id="chol" name="chol" style="margin-left: 50px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="age">age: </label>
+                            <input type="text" class="form-control" id="age" name="age" style="margin-left: 53px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="restecg">restecg: </label>
+                            <input type="text" class="form-control" id="restecg" name="restecg" style="margin-left: 27px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="slope">slope: </label>
+                            <input type="text" class="form-control" id="slope" name="slope" style="margin-left: 39px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="sex">sex: </label>
+                            <input type="text" class="form-control" id="sex" name="sex" style="margin-left: 55px;">
+                        </div>
+
+                        <br><br>
+
+                        <input type="submit" class='btn btn-lg btn-warning btn-block' value="Submit">
+                        <input type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-block  btn-success" />
+                        <a href="/" class="btn btn-info btn-block">Back</a>
+                        <br><br>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        function refreshPage() {
+            if (confirm("Are you sure, want to refresh?")) {
+                location.reload();
+            }
+        }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

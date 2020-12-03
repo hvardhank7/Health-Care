@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Health_Care</title>
+</head>
+
+
+<body style="margin: 0;padding: 0;">
+    <div class="container-fluid" style="margin: 0;padding: 0;">
+        <nav class="navbar navbar-light bg-dark">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="home.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Tests</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row">
+            <div class="col-6 py-0 px-0">
+                <div class="jumbotron " style="height: 650px;">
+                    <h1 class="display-4 text-center">Liver Disease</h1>
+                    <br><br>
+                    <p>Liver disease is any disturbance of liver function that causes illness. The liver is responsible for many critical functions within the body and should it become diseased or injured, the loss of those functions can cause significant damage to the body. Liver disease is also referred to as hepatic disease.</p>
+                    <hr>
+                    <h2 class="display-5 text-center">Symptoms</h2>
+                    <ul>
+                        <li>Nausea</li>
+                        <li>Vomiting</li>
+                        <li>jaundice</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 py-4 px-0">
+                <h1 class="text-center">
+                    Details
+                </h1>
+
+                <form action="/result" method="POST" class="py-1 form-inline">
+
+                    <div class="container" style="padding-bottom: 50px;">
+                        <div class="form-group py-2 ml-5">
+                            <label for="Aspartate_Aminotransferase ">Aspartate_Aminotransferase: </label>
+                            <input type="text" id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase" class="form-control" style="margin-left: 20px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+                            <label for="Alkaline_Phosphotase">Alkaline_Phosphotase: </label>
+                            <input type="text" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" class="form-control " style="margin-left: 65px;">
+                        </div>
+
+                        <div class="form-group py-2 ml-5">
+                            <label for="Total_Bilirubin">Total_Bilirubin: </label>
+                            <input type="text" id="Total_Bilirubin" name="Total_Bilirubin" class="form-control" style="margin-left: 120px;">
+                        </div>
+
+                        <div class="form-group py-2 ml-5">
+                            <label for="Albumin">Albumin: </label>
+                            <input type="text" class="form-control" id="Albumin" name="Albumin" style="margin-left: 160px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="Age">Age: </label>
+                            <input type="text" class="form-control" id="Age" name="Age" style="margin-left: 190px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="Total_Protiens">Total_Protiens: </label>
+                            <input type="text" class="form-control" id="Total_Protiens" name="Total_Protiens" style="margin-left: 120px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="Gender">Gender: </label>
+                            <input type="text" class="form-control" id="Gender" name="Gender" style="margin-left: 167px;">
+                        </div>
+                        <br><br>
+
+                        <input type="submit" class='btn btn-lg btn-warning btn-block' value="Submit">
+                        <input type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-block  btn-success" />
+                        <a href="/" class="btn btn-info btn-block">Back</a>
+                        <br><br>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function refreshPage() {
+                if (confirm("Are you sure, want to refresh?")) {
+                    location.reload();
+                }
+            }
+
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
