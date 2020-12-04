@@ -46,16 +46,16 @@ def kidney():
 
 def ValuePredictor(to_predict_list, size):
     to_predict = np.array(to_predict_list).reshape(1,size)
-    if(size==7):#Diabetes
-        loaded_model = joblib.load("diabetes_model.pkl")
+    if(size==4):#Diabetes
+        loaded_model = joblib.load("diabetes1_model.pkl")
         result = loaded_model.predict(to_predict)
     elif(size==5):#Cancer
         loaded_model = joblib.load("cancer_model.pkl")
         result = loaded_model.predict(to_predict)
-    elif(size==7):#Kidney
-        loaded_model = joblib.load("kidney_model.pkl")
+    elif(size==12):#Kidney
+        loaded_model = joblib.load("kidney_model")
         result = loaded_model.predict(to_predict)
-    elif(size==7):#Liver
+    elif(size==6):#Liver
         loaded_model = joblib.load("liver_model.pkl")
         result = loaded_model.predict(to_predict)
     elif(size==11):#Heart
@@ -71,14 +71,14 @@ def result():
         to_predict_list = list(map(float, to_predict_list))
         if(len(to_predict_list)==5):#Cancer
             result = ValuePredictor(to_predict_list,5)
-        elif(len(to_predict_list)==7):#Daiabtes
-            result = ValuePredictor(to_predict_list,7)
-        elif(len(to_predict_list)==7):
-            result = ValuePredictor(to_predict_list,7)
-        elif(len(to_predict_list)==7):
-            result = ValuePredictor(to_predict_list,7)
+        elif(len(to_predict_list)==4):#Daiabtes
+            result = ValuePredictor(to_predict_list,4)
+        elif(len(to_predict_list)==12):#kideny
+            result = ValuePredictor(to_predict_list,12)
+        elif(len(to_predict_list)==6):#liver
+            result = ValuePredictor(to_predict_list,6)
           
-        elif(len(to_predict_list)==11):
+        elif(len(to_predict_list)==11):#heart
             result = ValuePredictor(to_predict_list,11)
     if(int(result)==1):
         prediction = " Sorry you chances of getting the disease. Kindly consult to the doctor. Thank You "
@@ -89,3 +89,4 @@ def result():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
