@@ -18,16 +18,19 @@
         <nav class="navbar navbar-light bg-dark">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">HOME</a>
+                    <a class="nav-link active" href="#home">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Tests</a>
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#test">Tests</a>
                 </li>
             </ul>
         </nav>
         <div class="row">
             <div class="col-6 py-0 px-0">
-                <div class="jumbotron " style="height: 650px;">
+                <div class="jumbotron " style="height: 550px;">
                     <h1 class="display-4 text-center">Kidney Disease</h1>
                     <br><br>
                     <p>Kidney disease means your kidneys are damaged and can't filter blood the way they should. You are at greater risk for kidney disease if you have diabetes or high blood pressure. If you experience kidney failure, treatments include kidney transplant or dialysis.</p>
@@ -35,15 +38,15 @@
                     <h2 class="display-5 text-center">Symptoms</h2>
                     <ul>
                         <li>Nausea.
-                        </li>
+</li>
                         <li>Vomiting.
-                        </li>
+</li>
                         <li>Sleep problems.
-                        </li>
-                        <li>Swelling of feet and ankles.
-                        </li>
-                        <li>Chest pain and shortness of breath.
-                        </li>
+</li>
+<li>Swelling of feet and ankles.
+</li>
+<li>Chest pain and shortness of breath.
+</li>
                     </ul>
                 </div>
             </div>
@@ -55,41 +58,63 @@
                 <form action="/result" method="POST" class="py-1 form-inline">
 
                     <div class="container" style="padding-bottom: 50px;">
+                         <div class="form-group py-2 ml-5">
+                            <label for="age">age: </label>
+                            <input type="text" class="form-control" id="age" name="age" style="margin-left: 55px;">
+                        </div>
                         <div class="form-group py-2 ml-5">
                             <label for="bp">Blood Pressure: </label>
-                            <input type="text" id="bp" name="bp" class="form-control " style="margin-left: 25px;">
+                            <input type="text" id="bp" name="bp" class="form-control " style="margin-left: 75px;">
                         </div>
-
-                        <div class="form-group py-2 ml-5">
-                            <label for="sg">
-                                Specific_Gravity: </label>
-                            <input type="text" id="sg" name="sg" class="form-control" style="margin-left: 23px;">
-                        </div>
-
                         <div class="form-group py-2 ml-5">
                             <label for="al">
-                                Albumin: </label>
-                            <input type="text" id="al" name="al" class="form-control" style="margin-left: 75px;">
-                        </div>
-
-                        <div class="form-group py-2 ml-5">
-                            <label for="su">Sugar: </label>
-                            <input type="text" class="form-control" id="su" name="su" style="margin-left: 95px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="rbc">Red Blood Cells: </label>
-                            <input type="text" class="form-control" id="rbc" name="rbc" style="margin-left: 27px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="pc">Pus_Cell: </label>
-                            <input type="text" class="form-control" id="pc" name="pc" style="margin-left: 80px;">
+Albumin: </label>
+                            <input type="text" id="al" name="al" class="form-control" style="margin-left: 55px;">
                         </div>
                         <div class="form-group py-2 ml-5">
 
                             <label for="pcc"> Pus_Cell_Clumps: </label>
-                            <input type="text" class="form-control" id="pcc" name="pcc" style="margin-left: 21px;">
+                            <input type="text" class="form-control" id="pcc" name="pcc" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="=bgr">Blood Glucose Random: </label>
+                            <input type="text" class="form-control" id="bgr" name="bgr" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="bu">Blood Urea: </label>
+                            <input type="text" class="form-control" id="bu" name="bu" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="sc">serum_creatinine: </label>
+                            <input type="text" class="form-control" id="sc" name="sc" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="hemo">Haemoglobin: </label>
+                            <input type="text" class="form-control" id="hemo" name="hemo" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="pcv">Packed Cell Volume: </label>
+                            <input type="text" class="form-control" id="pcv" name="pcv" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="htn">Hypertension: </label>
+                            <input type="text" class="form-control" id="htn" name="htn" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="dm">Diabetes Mellitus: </label>
+                            <input type="text" class="form-control" id="dm" name="dm" style="margin-left: 17px;">
+                        </div>
+                        <div class="form-group py-2 ml-5">
+
+                            <label for="appet">Appetite: </label>
+                            <input type="text" class="form-control" id="appet" name="appet" style="margin-left: 17px;">
                         </div>
                         <br><br>
 
@@ -102,49 +127,6 @@
 
             </div>
         </div>
-
-        <!--
-        <div class="jumbotron">
-            <h1 class="display-4 text-center">Breast Cancer</h1>
-
-        </div>
-        <div class="container">
-            <h1 class="text-center">
-                Details
-            </h1>
-            <form action="/result" method="POST" class="py-1">
-                <div class="container" style="padding-bottom: 50px;">
-
-                    <label for="Concavity_mean">Concavity_mean: </label>
-                    <input type="text" id="Concavity_mean" name="Concavity_mean" class="form-control">
-                    <br>
-
-                    <label for="radius_worst">Radius_worst: </label>
-                    <input type="text" id="radius_worst" name="radius_worst" class="form-control">
-                    <br>
-
-                    <label for="perimeter_worst">Perimeter_worst: </label>
-                    <input type="text" id="perimeter_worst" name="perimeter_worst" class="form-control">
-                    <br>
-
-                    <label for="concavity_worst">Concavity_worst: </label>
-                    <input type="text" class="form-control" id="concavity_worst" name="concavity_worst">
-                    <br>
-
-                    <label for="concave points_worst">Concave points_worst: </label>
-                    <input type="text" class="form-control" id="concave points_worst" name="concave points_worst">
-                    <br>
-                    <br>
-
-                    <input type="submit" class='btn btn-lg btn-warning btn-block' value="Submit">
-                    <input type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-block  btn-success" />
-                    <a href="/" class="btn btn-info btn-block">Back</a>
-                    <br><br>
-                </div>
-            </form>
-
-        </div>
--->
     </div>
 
     <script type="text/javascript">
@@ -153,6 +135,7 @@
                 location.reload();
             }
         }
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -161,4 +144,6 @@
 
 
 
-</body></html>
+</body>
+
+</html>
