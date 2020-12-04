@@ -59,7 +59,7 @@ def ValuePredictor(to_predict_list, size):
         loaded_model = joblib.load("liver_model.pkl")
         result = loaded_model.predict(to_predict)
     elif(size==11):#Heart
-        loaded_model = joblib.load("liver_model.pkl")
+        loaded_model = joblib.load("heart_model.pkl")
         result =loaded_model.predict(to_predict)
     return result[0]
 
