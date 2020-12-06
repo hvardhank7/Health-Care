@@ -14,7 +14,7 @@
 
 
 <body style="margin: 0;padding: 0;">
-    <div class="container-fluid" style="margin: 0;padding: 0;">
+    <div class="container-fluid" style="margin: 0;padding: 0;  height: 50vh;">
         <nav class="navbar navbar-light bg-dark">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
@@ -27,11 +27,11 @@
         </nav>
         <div class="row">
             <div class="col-6 py-0 px-0">
-                <div class="jumbotron " style="height: 870px;">
+                <div class="jumbotron " style="height: 600px;">
                     <h1 class="display-4 text-center">Heart Disease</h1>
                     <br><br>
-                    <p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems and heart defects you're born with among others.
-                        The term "heart disease" is often used interchangeably with the term "cardiovascular disease."</p>
+                    <p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems and heart defects you're born with
+                        among others. The term "heart disease" is often used interchangeably with the term "cardiovascular disease."</p>
                     <hr>
                     <h2 class="display-5 text-center">Symptoms</h2>
                     <ul>
@@ -54,27 +54,27 @@
                     <div class="container" style="padding-bottom: 50px;">
                         <div class="form-group py-2 ml-5">
                             <label for="Insulin">Insulin: </label>
-                            <input type="text" id="Insulin" name="Insulin" class="form-control" style="margin-left: 65px;">
+                            <input type="text" id="Insulin" name="Insulin" class="form-control" style="margin-left: 55px;">
                         </div>
 
                         <div class="form-group py-2 ml-5">
                             <label for="Glucose">Glucose: </label>
-                            <input type="text" class="form-control" id="Glucose" name="Glucose" style="margin-left: 30px;">
+                            <input type="text" class="form-control" id="Glucose" name="Glucose" style="margin-left: 45px;">
                         </div>
                         <div class="form-group py-2 ml-5">
 
                             <label for="Pregnancies">Pregnancies: </label>
-                            <input type="text" class="form-control" id="Pregnancies" name="Pregnancies" style="margin-left: 65px;">
+                            <input type="text" class="form-control" id="Pregnancies" name="Pregnancies" style="margin-left: 15px;">
                         </div>
                         <div class="form-group py-2 ml-5">
 
                             <label for="BMI">BMI: </label>
-                            <input type="text" class="form-control" id="BMI" name="BMI" style="margin-left: 55px;">
+                            <input type="text" class="form-control" id="BMI" name="BMI" style="margin-left: 72px;">
                         </div>
                         <br><br>
 
                         <input type="submit" class='btn btn-lg btn-warning btn-block' value="Submit">
-                        <input type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-block  btn-success" />
+                        <input type="button" value="Refresh" onclick='refreshPage()' class="btn btn-block  btn-success" />
                         <a href="/" class="btn btn-info btn-block">Back</a>
                         <br><br>
                     </div>
@@ -91,7 +91,6 @@
                 location.reload();
             }
         }
-
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
