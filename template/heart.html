@@ -30,8 +30,8 @@
                 <div class="jumbotron " style="height: 870px;">
                     <h1 class="display-4 text-center">Heart Disease</h1>
                     <br><br>
-                    <p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems and heart defects you're born with among others.
-                        The term "heart disease" is often used interchangeably with the term "cardiovascular disease."</p>
+                    <p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems and heart defects you're born with
+                        among others. The term "heart disease" is often used interchangeably with the term "cardiovascular disease."</p>
                     <hr>
                     <h2 class="display-5 text-center">Symptoms</h2>
                     <ul>
@@ -102,14 +102,19 @@
                         </div>
                         <div class="form-group py-2 ml-5">
 
-                            <label for="sex">sex: </label>
-                            <input type="text" class="form-control" id="sex" name="sex" style="margin-left: 62px;">
+                            <form action="post">
+                                <label for="">sex: </label>
+                                <input type="radio" id="male" name="gender" value="0" style="margin-left: 60px;">
+                                <label for="male">Male</label><br>
+                                <input type="radio" id="female" name="gender" value="1" style="margin-left: 60px;">
+                                <label for="female">Female</label><br>
+                            </form>
                         </div>
 
                         <br><br>
 
                         <input type="submit" class='btn btn-lg btn-warning btn-block' value="Submit">
-                        <input type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-block  btn-success" />
+                        <input type="button" value="Refresh" onclick='refreshPage()' class="btn btn-block  btn-success" />
                         <a href="/" class="btn btn-info btn-block">Back</a>
                         <br><br>
                     </div>
@@ -127,7 +132,6 @@
                 location.reload();
             }
         }
-
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
