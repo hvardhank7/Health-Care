@@ -1,145 +1,152 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-    <title>Health_Care</title>
-</head>
-
-
-<body style="margin: 0;padding: 0;">
-    <div class="container-fluid" style="margin: 0;padding: 0;">
-        <nav class="navbar navbar-light bg-dark">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Tests</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="row">
-            <div class="col-6 py-0 px-0">
-                <div class="jumbotron " style="height: 870px;">
-                    <h1 class="display-4 text-center">Heart Disease</h1>
-                    <br><br>
-                    <p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems and heart defects you're born with
-                        among others. The term "heart disease" is often used interchangeably with the term "cardiovascular disease."</p>
-                    <hr>
-                    <h2 class="display-5 text-center">Symptoms</h2>
-                    <ul>
-                        <li>Chest pain, chest tightness, chest pressure and chest discomfort (angina)
-                        </li>
-                        <li>Shortness of breath
-                        </li>
-                        <li>Pain in the neck, jaw, throat, upper abdomen or back
-                        </li>
-                    </ul>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Heart-Test</title>
+    <link rel="stylesheet" href="./main.css">    
+  </head>
+  <style>
+      #photo{
+          background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.pexels.com/photos/3683102/pexels-photo-3683102.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500')center/cover no-repeat;
+      }
+  </style>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">HealthCare.com</a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Heart-Test</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section>
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-md-8 d-flex align-items-center justify-content-center" id="photo" style="height:92vh">
+                    <h1 class="text-center text-light display-4">
+                        HEART
+                    </h1>
+                </div>
+                <div class="col-md-4" style="height:92vh">
+                    <h3 class="text-center mt-3">Details</h3>
+                    <form class="mt-3" action="/result" method="POST" >
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">CA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="ca" name="ca"  placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">CP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control" id="cp" name="cp" placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="age" name="age" placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Cholestrol</div>
+                            </div>
+                            <input type="text" class="form-control"   id="chol" name="chol"  placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">exang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control" id="exang" name="exang" placeholder="enter the digit">
+                        </div>
+						
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">restecg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="restecg" name="restecg" placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">thal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="thal" name="thal" placeholder="enter the digit">
+                        </div>
+						
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">slope&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="slope" name="slope" placeholder="enter the digit">
+                        </div>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend ">
+                              <div class="input-group-text bg-dark text-light">oldpeak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control" id="oldpeak" name="oldpeak" placeholder="enter the digit">
+                        </div>
+                        
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">thalach&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control" id="thalach" name="thalach" placeholder="enter the digit">
+                        </div>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <label class="radio-inline px-5"><input type="radio" id="male" name="gender" value="0">Male</label>
+<label class="radio-inline"><input type="radio"  id="female" name="gender" value="1">Female</label>
+                        </div>
+						
+						
+						
+						
+						
+                        
+                        <button type="submit" class="btn btn-primary btn-block mb-2">SUBMIT</button>
+                        <button type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-primary btn-block mb-2">RESET</button>
+                        <a href ="/" class="btn btn-primary btn-block mb-2">GO BACK</a>
+                    </form>
                 </div>
             </div>
-            <div class="col-6 py-4 px-0">
-                <h1 class="text-center">
-                    Details
-                </h1>
-
-                <form action="/result" method="POST" class="py-1 form-inline">
-
-                    <div class="container" style="padding-bottom: 50px;">
-                        <div class="form-group py-2 ml-5">
-                            <label for="exang ">exang: </label>
-                            <input type="text" id="exang" name="exang" class="form-control" style="margin-left: 40px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-                            <label for="oldpeak">oldpeak: </label>
-                            <input type="text" id="oldpeak" name="oldpeak" class="form-control " style="margin-left: 27px;">
-                        </div>
-
-                        <div class="form-group py-2 ml-5">
-                            <label for="cp">cp: </label>
-                            <input type="text" id="cp" name="cp" class="form-control" style="margin-left: 65px;">
-                        </div>
-
-                        <div class="form-group py-2 ml-5">
-                            <label for="thalach">thalach: </label>
-                            <input type="text" class="form-control" id="thalach" name="thalach" style="margin-left: 30px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="ca">ca: </label>
-                            <input type="text" class="form-control" id="ca" name="ca" style="margin-left: 67px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="thal">thal: </label>
-                            <input type="text" class="form-control" id="thal" name="thal" style="margin-left: 58px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="chol">chol: </label>
-                            <input type="text" class="form-control" id="chol" name="chol" style="margin-left: 55px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="age">age: </label>
-                            <input type="text" class="form-control" id="age" name="age" style="margin-left: 57px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="restecg">restecg: </label>
-                            <input type="text" class="form-control" id="restecg" name="restecg" style="margin-left: 34px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="slope">slope: </label>
-                            <input type="text" class="form-control" id="slope" name="slope" style="margin-left: 47px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <form action="post">
-                                <label for="">sex: </label>
-                                <input type="radio" id="male" name="gender" value="0" style="margin-left: 60px;">
-                                <label for="male">Male</label><br>
-                                <input type="radio" id="female" name="gender" value="1" style="margin-left: 60px;">
-                                <label for="female">Female</label><br>
-                            </form>
-                        </div>
-
-                        <br><br>
-
-                        <input type="submit" class='btn btn-lg btn-warning btn-block' value="Submit">
-                        <input type="button" value="Refresh" onclick='refreshPage()' class="btn btn-block  btn-success" />
-                        <a href="/" class="btn btn-info btn-block">Back</a>
-                        <br><br>
-                    </div>
-                </form>
-
-            </div>
         </div>
-
-
-    </div>
-
-    <script type="text/javascript">
+      </section>
+	   <script type="text/javascript">
         function refreshPage() {
             if (confirm("Are you sure, want to refresh?")) {
                 location.reload();
             }
         }
+
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
 
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz4htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-
-</body>
-
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>
