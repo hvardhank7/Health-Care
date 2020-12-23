@@ -19,7 +19,7 @@ Flask
 
 The entire task is conveyed on Heroku Cloud. 
 
-Here is where you can get to the venture live :https://ml-healthcare1999.herokuapp.com/
+Here is link where you can get to the venture live :https://ml-healthcare1999.herokuapp.com/
 
 THANK YOU!!
 
