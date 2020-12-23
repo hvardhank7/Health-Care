@@ -1,108 +1,114 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-    <title>Health_Care</title>
-</head>
-
-
-<body style="margin: 0;padding: 0;">
-    <div class="container-fluid" style="margin: 0;padding: 0;">
-        <nav class="navbar navbar-light bg-dark">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Tests</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="row">
-            <div class="col-6 py-0 px-0">
-                <div class="jumbotron " style="height: 650px;">
-                    <h1 class="display-4 text-center">Liver Disease</h1>
-                    <br><br>
-                    <p>Liver disease is any disturbance of liver function that causes illness. The liver is responsible for many critical functions within the body and should it become diseased or injured, the loss of those functions can cause significant damage to the body. Liver disease is also referred to as hepatic disease.</p>
-                    <hr>
-                    <h2 class="display-5 text-center">Symptoms</h2>
-                    <ul>
-                        <li>Nausea</li>
-                        <li>Vomiting</li>
-                        <li>jaundice</li>
-                    </ul>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Liver-Test</title>
+    <link rel="stylesheet" href="./main.css">    
+  </head>
+  <style>
+      #photo{
+          background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.pexels.com/photos/3683102/pexels-photo-3683102.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500')center/cover no-repeat;
+      }
+  </style>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">HealthCare.com</a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Liver Tests</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section>
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-md-8 d-flex align-items-center justify-content-center" id="photo" style="height:92vh">
+                    <h1 class="text-center text-light display-4">
+                       Liver Disease
+                    </h1>
+                </div>
+                <div class="col-md-4" style="height:92vh">
+                    <h3 class="text-center mt-3">Details</h3>
+                    <form class="mt-3" action="/result" method="POST" >
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Age &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="Age" name="Age" placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Albumin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="Albumin" name="Albumin" placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Alkaline Phosphotase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" placeholder="enter the digit">
+                        </div>                       
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend ">
+                              <div class="input-group-text bg-dark text-light">Alamine Aminotransferase&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control"  id="Alamine_Aminotransferase" name="Alamine_Aminotransferase"placeholder="enter the digit">
+                        </div>
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Aspartate_Aminotransferase</div>
+                            </div>
+                            <input type="text"  class="form-control"id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase"  placeholder="enter the digit">
+                        </div>
+                        
+						<div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-dark text-light">Total_Bilirubin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            </div>
+                            <input type="text" class="form-control" id="Total_Bilirubin" name="Total_Bilirubin" placeholder="enter the digit">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block mb-2">SUBMIT</button>
+                        <button type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-primary btn-block mb-2">RESET</button>
+                        <a href ="/" class="btn btn-primary btn-block mb-2">GO BACK</a>
+                    </form>
                 </div>
             </div>
-            <div class="col-6 py-4 px-0">
-                <h1 class="text-center">
-                    Details
-                </h1>
-
-                <form action="/result" method="POST" class="py-1 form-inline">
-
-                    <div class="container" style="padding-bottom: 50px;">
-                        <div class="form-group py-2 ml-5">
-                            <label for="Aspartate_Aminotransferase ">Aspartate_Aminotransferase: </label>
-                            <input type="text" id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase" class="form-control" style="margin-left: 20px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="Alamine_Aminotransferase">Alamine_Aminotransferase: </label>
-                            <input type="text" class="form-control" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" style="margin-left: 120px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-                            <label for="Alkaline_Phosphotase">Alkaline_Phosphotase: </label>
-                            <input type="text" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" class="form-control " style="margin-left: 65px;">
-                        </div>
-
-                        <div class="form-group py-2 ml-5">
-                            <label for="Total_Bilirubin">Total_Bilirubin: </label>
-                            <input type="text" id="Total_Bilirubin" name="Total_Bilirubin" class="form-control" style="margin-left: 120px;">
-                        </div>
-
-                        <div class="form-group py-2 ml-5">
-                            <label for="Albumin">Albumin: </label>
-                            <input type="text" class="form-control" id="Albumin" name="Albumin" style="margin-left: 160px;">
-                        </div>
-                        <div class="form-group py-2 ml-5">
-
-                            <label for="Age">Age: </label>
-                            <input type="text" class="form-control" id="Age" name="Age" style="margin-left: 190px;">
-                        </div>
-                        <br><br>
-
-                        <input type="submit" class='btn btn-lg btn-warning btn-block' value="Submit">
-                        <input type="button" value="Refresh Webpage." onclick='refreshPage()' class="btn btn-block  btn-success" />
-                        <a href="/" class="btn btn-info btn-block">Back</a>
-                        <br><br>
-                    </div>
-                </form>
-
-            </div>
-
         </div>
-
-        <script type="text/javascript">
-            function refreshPage() {
-                if (confirm("Are you sure, want to refresh?")) {
-                    location.reload();
-                }
+      </section>
+	   <script type="text/javascript">
+        function refreshPage() {
+            if (confirm("Are you sure, want to refresh?")) {
+                location.reload();
             }
+        }
 
-        </script>
+    </script>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
 
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz4htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-</body>
-
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>
